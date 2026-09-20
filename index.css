@@ -9,7 +9,10 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+ul,
+li,
+a {
   margin: 0;
   padding: 0;
 
@@ -19,36 +22,32 @@ ul,
 li,
 a {
   list-style: none;
-  padding: 0;
   text-decoration: none;
+}
+
+
+a {
+  transition: box-shadow 0.5s ease-in-out;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 0 0 black;
+}
+
+a:focus-visible {
+  border-bottom: 2px solid black;
+  outline: none;
 }
 
 
 
 body {
   min-height: 100vh;
-  background-color: #ededed;
-  overflow-x: hidden;
+  background-color: whitesmoke;
   font-family: "Montserrat", sans-serif;
 }
-
-a,
-span {
-  transition: box-shadow 0.5s ease-in-out;
-}
-
-a:hover,
-span:hover {
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0 2px 0 0 black;
-}
-
-a:focus-visible {
-  outline: none;
-  border-bottom: 2px solid black;
-}
-
 
 .btn {
   width: 9em;
@@ -69,7 +68,7 @@ a:focus-visible {
 }
 
 .btn:focus-visible {
-  outline: none;
+  outline: black;
 }
 
 .header,
@@ -114,10 +113,6 @@ a:focus-visible {
   gap: 20px;
 }
 
-.navbar_links a {
-  color: black;
-}
-
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -149,7 +144,7 @@ a:focus-visible {
 
   .header_navbar {
     display: none;
-    flex-flow: column wrap;
+    flex-direction: column;
     width: 100%;
     margin: 0;
     gap: 15px;
@@ -185,7 +180,7 @@ a:focus-visible {
 
 main {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 5%;
@@ -194,7 +189,7 @@ main {
 
 .hero {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -218,7 +213,7 @@ main {
 
 .value-section {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -243,7 +238,7 @@ main {
 
 .card {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -270,7 +265,7 @@ main {
 
 }
 
-.card span {
+.card a {
   align-self: flex-start;
   font-weight: bolder;
 }
@@ -292,7 +287,7 @@ main {
 
 .footer_section {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -310,7 +305,7 @@ main {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  footer {
+  .footer {
     grid-template-columns: repeat(4, 1fr);
 
   }
@@ -322,13 +317,10 @@ main {
   .footer_section:first-child {
     grid-column: 1/-1;
   }
-
-
-
 }
 
 @media(width <=600px) {
-  footer {
+  .footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
